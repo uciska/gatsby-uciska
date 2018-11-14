@@ -9,6 +9,7 @@ const Head = ({
   siteTitle,
   siteDescription,
   siteUrl,
+  siteLang,
   pageTitle,
   pageTitleFull = pageTitle ? `${siteTitle}: ${pageTitle}` : siteTitle,
   themeColor,
@@ -18,7 +19,7 @@ const Head = ({
   canonical = siteUrl + (location.pathname || '')
 }) => (
   <Helmet>
-    <html lang='en' />
+    <html lang={siteLang} />
 
     <meta content='IE=edge' httpEquiv='X-UA-Compatible' />
     <meta
@@ -170,6 +171,7 @@ Head.propTypes = {
   siteTitleShort: PropTypes.string,
   siteDescription: PropTypes.string,
   siteUrl: PropTypes.string,
+  siteLang: PropTypes.string,
   themeColor: PropTypes.string,
   social: PropTypes.objectOf(PropTypes.string),
   imageUrl: PropTypes.string,
@@ -189,6 +191,7 @@ const HeadWithQuery = props => (
             siteTitleShort
             siteDescription
             siteUrl
+            siteLang
             themeColor
             social {
               twitter
