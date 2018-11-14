@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-universal",
+  "name": "gatsby-uciska",
   "license": "MIT",
-  "author": "Fabian Schultz <desk@fabianschultz.com>",
+  "author": "Uciska Rezswov <uciska.rezswov@gmail.com>",
   "scripts": {
     "develop": "gatsby develop",
     "serve": "gatsby serve",
