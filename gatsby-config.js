@@ -18,6 +18,21 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        modifyVars: require(`./src/styles/theme.js`),
+        // Needed to load antdesign less files.
+        javascriptEnabled: true
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-antd',
+      options: {
+        // Activate less files
+        style: true
+      }
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-webpack-size`,

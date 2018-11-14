@@ -7,6 +7,7 @@ import Gallery from 'components/gallery';
 import IOExample from 'components/io-example';
 import Modal from 'containers/modal';
 import { graphql } from 'gatsby';
+import { Button } from 'antd';
 
 const Index = ({ data }) => (
   <Layout>
@@ -23,6 +24,7 @@ const Index = ({ data }) => (
           muted
         />
       </Modal>
+      <Button type="primary">Hello</Button>
     </Box>
     <Gallery items={data.homeJson.gallery} />
     <div style={{ height: '50vh' }} />
