@@ -14,7 +14,7 @@
     "prettier/prettier": "warn"
   },
   "extends": [
-    "eslint:recommended",
+    "gatsby-standard",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended"
   ],

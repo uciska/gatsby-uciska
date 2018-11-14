@@ -1,17 +1,17 @@
-const path = require('path');
-const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
+const path = require('path')
+const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
 
 exports.onCreateWebpackConfig = ({
   stage,
   getConfig,
   rules,
   loaders,
-  actions,
+  actions
 }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-      plugins: [new DirectoryNamedWebpackPlugin()],
-    },
-  });
-};
+      plugins: [new DirectoryNamedWebpackPlugin()]
+    }
+  })
+}
