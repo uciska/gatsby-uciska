@@ -12,3 +12,7 @@ yarn-error.log*
 .cache/
 public
 build
+
+# Env Variables
+.env.development
+.env.production

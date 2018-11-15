@@ -5,7 +5,7 @@ module.exports = {
   siteTitleShort: 'GatsbyU',
   siteDescription: 'An opinionated starter for Gatsby.',
   siteUrl: 'https://github.com/uciska/gatsby-uciska/',
-  siteLang: 'en',
+  siteLang: 'fr',
   themeColor: '#000',
   backgroundColor: '#fff',
   pathPrefix: null,

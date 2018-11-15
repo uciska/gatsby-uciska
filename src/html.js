@@ -13,11 +13,24 @@ export default class HTML extends React.Component {
             content='width=device-width, initial-scale=1, shrink-to-fit=no'
           />
           {this.props.headComponents}
+
+          {/* Snipcart */}
+          <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js' />
+          <script
+            src='https://cdn.snipcart.com/scripts/2.0/snipcart.js'
+            id='snipcart'
+            data-api-key={process.env.SNIPCART_API_KEY}
+          />
+          <link
+            href='https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
+            type='text/css'
+            rel='stylesheet'
+          />
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
           <div
-            key={`body`}
+            key={'body'}
             id='___gatsby'
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
