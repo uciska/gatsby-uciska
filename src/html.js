@@ -15,8 +15,12 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
 
           {/* Snipcart */}
-          <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js' />
           <script
+            defer
+            src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js'
+          />
+          <script
+            defer
             src='https://cdn.snipcart.com/scripts/2.0/snipcart.js'
             id='snipcart'
             data-api-key={process.env.SNIPCART_API_KEY}
