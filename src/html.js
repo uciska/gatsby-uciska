@@ -23,7 +23,7 @@ export default class HTML extends React.Component {
             defer
             src='https://cdn.snipcart.com/scripts/2.0/snipcart.js'
             id='snipcart'
-            data-api-key={process.env.SNIPCART_API_KEY}
+            data-api-key={process.env.GATSBY_SNIPCART_API_KEY}
           />
           <link
             href='https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
