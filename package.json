@@ -11,7 +11,7 @@
     "build:dir": "mkdir -p public/icons/",
     "build:favicons": "node scripts/favicons",
     "build:lambda": "netlify-lambda build src/lambda",
-    "build": "npm run build:dir && npm run build:favicons && gatsby build && npm run build:lambda",
+    "build": "npm run build:dir && npm run build:favicons && gatsby build",
     "test": "ava **/*.test.js --verbose"
   },
   "dependencies": {
