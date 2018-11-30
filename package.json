@@ -4,12 +4,14 @@
   "author": "Uciska Rezswov <uciska.rezswov@gmail.com>",
   "scripts": {
     "develop": "gatsby develop",
+    "develop:lambda": "netlify-lambda serve src/lambda",
     "serve": "gatsby serve",
     "ssr": "npm run build && npm run serve",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
     "build:dir": "mkdir -p public/icons/",
     "build:favicons": "node scripts/favicons",
-    "build": "npm run build:dir && npm run build:favicons && gatsby build",
+    "build:lambda": "netlify-lambda build src/lambda",
+    "build": "npm run build:dir && npm run build:favicons && gatsby build && npm run build:lambda",
     "test": "ava **/*.test.js --verbose"
   },
   "dependencies": {
@@ -36,6 +38,7 @@
     "gatsby-transformer-sharp": "^2.1.1",
     "intersection-observer": "^0.5.0",
     "less": "^3.8.1",
+    "netlify-lambda": "^1.0.3",
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",

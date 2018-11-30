@@ -1,3 +1,4 @@
+const proxy = require('http-proxy-middleware')
 const siteConfig = require('./site-config')
 
 require('dotenv').config({
@@ -7,6 +8,17 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     ...siteConfig
+  },
+  developMiddleware: app => {
+    app.use(
+      '/.netlify/functions/',
+      proxy({
+        target: 'http://localhost:9000',
+        pathRewrite: {
+          '/.netlify/functions/': ''
+        }
+      })
+    )
   },
   plugins: [
     'gatsby-plugin-react-helmet',

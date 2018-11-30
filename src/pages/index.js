@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/layout/layout'
 import Box from '../components/box/box'
@@ -8,6 +8,36 @@ import IOExample from '../components/io-example/io-example'
 import Modal from '../containers/modal/modal'
 import { graphql } from 'gatsby'
 import { Button } from 'antd'
+
+class LambdaDemo extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { loading: false, msg: null }
+  }
+
+  handleClick = e => {
+    e.preventDefault()
+
+    this.setState({ loading: true })
+    fetch('/.netlify/functions/hello')
+      .then(response => response.json())
+      .then(json => this.setState({ loading: false, msg: json.msg }))
+  }
+
+  render() {
+    const { loading, msg } = this.state
+
+    return (
+      <p>
+        <Button type='primary' onClick={this.handleClick}>
+          {loading ? 'Loading...' : 'Call Lambda'}
+        </Button>
+        <br />
+        <span>{msg}</span>
+      </p>
+    )
+  }
+}
 
 const Index = ({ data }) => (
   <Layout>
@@ -24,7 +54,7 @@ const Index = ({ data }) => (
           muted
         />
       </Modal>
-      <Button type='primary'>Hello</Button>
+      <LambdaDemo />
     </Box>
     <Gallery items={data.homeJson.gallery} />
     <div style={{ height: '50vh' }} />
