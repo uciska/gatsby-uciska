@@ -12,6 +12,12 @@ exports.onCreateWebpackConfig = ({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
       plugins: [new DirectoryNamedWebpackPlugin()]
+    },
+    node: {
+      fs: 'empty',
+      child_process: 'empty',
+      net: 'empty',
+      tls: 'empty'
     }
   })
 }

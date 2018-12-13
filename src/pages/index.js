@@ -9,6 +9,8 @@ import Modal from '../containers/modal/modal'
 import { graphql } from 'gatsby'
 import { Button } from 'antd'
 
+import { FirebaseContext } from '../components/firebase'
+
 class LambdaDemo extends Component {
   constructor(props) {
     super(props)
@@ -55,6 +57,11 @@ const Index = ({ data }) => (
         />
       </Modal>
       <LambdaDemo />
+      <FirebaseContext.Consumer>
+        {firebase => {
+          return <div>I ve access to Firebase and render something.</div>
+        }}
+      </FirebaseContext.Consumer>
     </Box>
     <Gallery items={data.homeJson.gallery} />
     <div style={{ height: '50vh' }} />
